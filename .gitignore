@@ -1,0 +1,7 @@
+# Inquirer
+node_modules/
+package-lock.json
+package.json
+
+# Instructions
+INSTRUCTIONS.md
