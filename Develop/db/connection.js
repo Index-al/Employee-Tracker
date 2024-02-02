@@ -7,12 +7,13 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: 'password',
-    database: 'employees'
+    database: 'employee_tracker'
 });
 
 // Connect to the database
 connection.connect(function(err) {
     if (err) throw err;
+    console.log('Connection successful!');
 });
 
 // Export the connection
