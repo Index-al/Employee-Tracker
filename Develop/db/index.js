@@ -1,15 +1,12 @@
 // Purpose: Grab the info from connection.js and use it to connect to the database before starting the app.
 
 const inquirer = require('inquirer');
-const connection = require('./db/connection');
+const connection = require('./connection.js');
 const logo = require('asciiart-logo');
 const consoleTable = require('console.table');
 
-
-// options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-
 // Import the queries from the lib folder
-const { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, UpdateEmployeeRole, deleteDepartment, deleteRole, deleteEmployee } = require('./lib/queries');
+const { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, UpdateEmployeeRole, deleteDepartment, deleteRole, deleteEmployee } = require('../lib/queries.js');
 
 // ASCII Art Logo
 console.log(logo({ name: 'Employee Manager' }).render());
@@ -41,37 +38,40 @@ function mainMenu() {
     ]).then((answers) => {
         switch (answers.action) {
             case '+ View all employees':
-                viewAllEmployees();
+                viewAllEmployees(mainMenu);
                 break;
             case '+ Add employee':
-                addEmployee();
+                addEmployee(mainMenu);
                 break;
             case '+ Update employee role':
-                UpdateEmployeeRole();
+                UpdateEmployeeRole(mainMenu);
                 break;
             case '+ Delete employee':
-                deleteEmployee();
+                deleteEmployee(mainMenu);
                 break;
             case '+ View all roles':
-                viewAllRoles();
+                viewAllRoles(mainMenu);
                 break;
             case '+ Add role':
-                addRole();
+                addRole(mainMenu);
                 break;
             case '+ Delete role':
-                deleteRole();
+                deleteRole(mainMenu);
                 break;
             case '+ View all departments':
-                viewAllDepartments();
+                viewAllDepartments(mainMenu);
                 break;
             case '+ Add department':
-                addDepartment();
+                addDepartment(mainMenu);
                 break;
             case '+ Delete department':
-                deleteDepartment();
+                deleteDepartment(mainMenu);
                 break;
             case '+ Exit':
                 connection.end();
+                break;
+            default:
+                console.error('Error: Invalid action');
                 break;
         }
     }).catch((error) => {
