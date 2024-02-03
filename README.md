@@ -32,6 +32,10 @@ Follow the on-screen prompts to interact with the database. 🖥️
 ## Screenshots
 ![Employee Tracker](./Assets/preview.png)
 
+![Employee Tracker Demo](./Assets/Employee%20Tracker%20Demo.gif)
+
+(or watch on YouTube [here](https://www.youtube.com/watch?v=toyku6rvMwM))
+
 ## License
 This project is licensed under the MIT License.
 
