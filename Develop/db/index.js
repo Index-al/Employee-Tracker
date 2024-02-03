@@ -6,7 +6,7 @@ const logo = require('asciiart-logo');
 const consoleTable = require('console.table');
 
 // Import the queries from the lib folder
-const { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, UpdateEmployeeRole, deleteDepartment, deleteRole, deleteEmployee } = require('../lib/queries.js');
+const { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, deleteDepartment, deleteRole, deleteEmployee } = require('../lib/queries.js');
 
 // ASCII Art Logo
 console.log(logo({ name: 'Employee Manager' }).render());
@@ -44,7 +44,7 @@ function mainMenu() {
                 addEmployee(mainMenu);
                 break;
             case '+ Update employee role':
-                UpdateEmployeeRole(mainMenu);
+                updateEmployeeRole(mainMenu);
                 break;
             case '+ Delete employee':
                 deleteEmployee(mainMenu);
